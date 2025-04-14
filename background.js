@@ -3,7 +3,7 @@
 // Store the API key in Chrome's storage sync
 // This is a placeholder - for production, consider using an environment variable
 // or a secure configuration during build rather than hardcoding
-const GEMINI_API_KEY = "AIzaSyDNoSLHzVT1uw6CueBI57Ni-pGx_aGtGaI";
+const GEMINI_API_KEY = "YOUR_API_KEY";
 
 // Store the API key in Chrome's storage when extension is installed
 chrome.runtime.onInstalled.addListener(() => {
