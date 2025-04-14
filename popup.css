@@ -1,0 +1,434 @@
+/* Base styles and CSS reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 350px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  padding: 16px;
+  line-height: 1.5;
+  font-size: 14px;
+  overflow-x: hidden;
+  min-height: 400px;
+  max-width: none;
+  min-width: 350px;
+  /* Add subtle background pattern */
+  background-image: radial-gradient(#e9ecef 1px, transparent 1px);
+  background-size: 20px 20px;
+  /* Add subtle transition for theme changes */
+  transition: background-color 0.3s ease;
+  /* Add rounded corners to popup */
+  border-radius: 12px;
+}
+
+/* Header styling with enhanced visual effects */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: none; /* Remove border for box shadow instead */
+  width: 100%;
+  position: relative;
+  /* Add subtle shadow instead of border */
+  box-shadow: 0 4px 6px -6px rgba(0, 0, 0, 0.1);
+  /* Add animation to header on load */
+  animation: fadeDown 0.5s ease-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  color: #4361ee;
+  font-size: 26px; /* Slightly larger */
+  margin-bottom: 4px;
+  /* Add subtle text shadow for depth */
+  text-shadow: 1px 1px 1px rgba(67, 97, 238, 0.1);
+  /* Add gradient effect to title */
+  background: linear-gradient(90deg, #4361ee, #3a56d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+.tagline {
+  color: #6c757d;
+  font-size: 14px;
+  /* Add animation delay for staggered effect */
+  animation: fadeIn 0.5s ease-out 0.2s both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* App container layout with enhanced style and rounded corners */
+.app-container {
+  position: relative;
+  height: auto;
+  overflow: visible;
+  /* Add subtle animation */
+  animation: fadeIn 0.5s ease-out 0.3s both;
+  /* Add subtle container shadow */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+  border-radius: 12px; /* Increased corner radius */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+}
+
+/* Main content area */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  min-width: 300px;
+}
+
+/* Input area with simplified styling and label container */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-out 0.4s both;
+}
+
+/* Create a container for the label and paste button */
+.label-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 5px;
+}
+
+/* Style for label */
+label, h2 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #495057;
+  display: inline-block;
+  position: relative;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+/* Remove the pencil icon from the label */
+label i {
+  display: none;
+}
+
+h2 {
+  padding-bottom: 4px;
+  border-bottom: none; /* Removed border to eliminate double line */
+}
+
+/* Paste icon styling - make it look like in the example */
+.paste-icon {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4361ee;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(67, 97, 238, 0.2);
+  width: auto;
+}
+
+.paste-icon i {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.paste-icon:hover {
+  background-color: #3a56d4;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 5px rgba(67, 97, 238, 0.3);
+}
+
+.paste-icon:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(67, 97, 238, 0.2);
+}
+
+.paste-icon.success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+/* Style both input fields as basic textboxes */
+textarea {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  background-color: white;
+  transition: height 0.2s ease;
+  overflow-y: hidden; /* Hide scrollbar during resize */
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4361ee;
+}
+
+/* Style both input and output boxes identically */
+textarea, .result-box {
+  width: 100%;
+  min-height: 80px;
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 10px;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 14px;
+  transition: all 0.2s ease, height 0.1s ease-out;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  background-clip: padding-box;
+  background-color: white;
+  overflow-y: hidden; /* Hide scrollbar during typing effect */
+}
+
+/* Apply specific height to result box only - now using min-height instead of fixed height */
+.result-box {
+  min-height: 120px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Simple left border for non-empty result box */
+.result-box:not(:empty) {
+  border-left: 3px solid #4361ee;
+  padding-left: 16px;
+}
+
+/* Button styling with simplified effects */
+button {
+  padding: 8px 16px;
+  background-color: #4361ee;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #3a56d4;
+}
+
+button:active {
+  background-color: #2e46c0;
+}
+
+/* Loading spinner with enhanced style */
+.loader {
+  display: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+@keyframes spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Button in loading state with subtle pulse */
+button.loading {
+  animation: pulse 1.5s infinite;
+  position: relative;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(67, 97, 238, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(67, 97, 238, 0); }
+}
+
+button.loading .button-text {
+  visibility: hidden;
+}
+
+button.loading .loader {
+  display: block;
+  position: absolute;
+}
+
+/* Result area styling with simplified look */
+.result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  /* Add subtle animation */
+  animation: fadeIn 0.5s ease-out 0.5s both;
+}
+
+h2 {
+  font-size: 16px;
+  color: #495057;
+  /* Add subtle underline */
+  padding-bottom: 4px;
+  border-bottom: none; /* Removed border to eliminate double line */
+}
+
+/* Button container for centering the copy button */
+.button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* Copy button specific styling */
+#copy-button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #4361ee;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(67, 97, 238, 0.2);
+  width: auto;
+  min-width: auto;
+}
+
+#copy-button i {
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+#copy-button:hover {
+  background-color: #3a56d4;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 5px rgba(67, 97, 238, 0.3);
+}
+
+#copy-button:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(67, 97, 238, 0.2);
+}
+
+#copy-button.copied {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+/* Footer styling adjustments */
+footer {
+  margin-top: 16px;
+  text-align: center;
+  font-size: 12px;
+  color: #6c757d;
+  /* Add subtle animation */
+  animation: fadeIn 0.5s ease-out 0.6s both;
+  /* Add subtle divider above footer */
+  padding-top: 16px;
+  border-top: 1px dashed rgba(67, 97, 238, 0.1);
+}
+
+/* Styles for the message display with enhanced animations */
+#message {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  display: none;
+  z-index: 1000;
+  /* Add slide-down animation */
+  animation: slideDown 0.3s ease-out;
+  /* Add glass effect */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, 0);
+    opacity: 1;
+  }
+}
+
+.message.success {
+  background-color: rgba(212, 237, 218, 0.9);
+  color: #155724;
+  border-left: 4px solid #28a745;
+}
+
+.message.error {
+  background-color: rgba(248, 215, 218, 0.9);
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+/* Update responsive adjustments */
+@media (max-width: 400px) {
+  body {
+    width: 100%;
+    padding: 12px;
+  }
+
+  textarea {
+    height: 70px;
+  }
+  
+  .result-box {
+    height: 100px; /* Adjusted responsive height while maintaining size difference */
+    min-height: 100px;
+  }
+}

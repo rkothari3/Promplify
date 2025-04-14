@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Promplify</title>
+  <link rel="stylesheet" href="popup.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header section for the extension -->
+  <header>
+    <h1>Promplify</h1>
+    <p class="tagline">Enhance your AI prompts with a click</p>
+  </header>
+
+  <div class="app-container">
+    <!-- Main content area -->
+    <main>
+      <div class="input-container">
+        <div class="label-container">
+          <label for="promptInput">Your prompt</label>
+          <button class="paste-icon" id="paste-button" title="Paste from clipboard">
+            <i class="fas fa-paste"></i> Paste
+          </button>
+        </div>
+        <textarea id="promptInput" placeholder="Paste your prompt here..."></textarea>
+      </div>
+      
+      <button id="enhanceButton">
+        <span class="button-text"><i class="fas fa-wand-magic-sparkles fa-sm"></i> Enhance</span>
+        <span class="loader" id="loadingSpinner"></span>
+      </button>
+      
+      <div class="result-container">
+        <div class="label-container">
+          <h2>Enhanced Prompt</h2>
+          <button id="copy-button" title="Copy to clipboard">
+            <i class="fas fa-copy fa-sm"></i> Copy
+          </button>
+        </div>
+        <textarea id="enhancedPrompt"></textarea>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer with credits -->
+  <footer>
+    <p>Promplify &copy; 2025 <i class="fas fa-bolt fa-xs"></i></p>
+  </footer>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
