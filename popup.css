@@ -21,7 +21,7 @@ body {
   background-image: radial-gradient(#e9ecef 1px, transparent 1px);
   background-size: 20px 20px;
   /* Add subtle transition for theme changes */
-  transition: background-color 0.3s ease;
+  transition: background-color 0.5s ease, color 0.5s ease;
   /* Add rounded corners to popup */
   border-radius: 12px;
 }
@@ -38,6 +38,19 @@ header {
   box-shadow: 0 4px 6px -6px rgba(0, 0, 0, 0.1);
   /* Add animation to header on load */
   animation: fadeDown 0.5s ease-out;
+  cursor: pointer; /* Show as clickable for easter egg */
+  padding: 16px 8px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  overflow: hidden; /* For ripple effects */
+}
+
+header:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+header:active {
+  background-color: rgba(67, 97, 238, 0.1);
 }
 
 @keyframes fadeDown {
@@ -63,6 +76,9 @@ h1 {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   letter-spacing: 0.5px;
+  transition: all 0.5s ease;
+  position: relative;
+  user-select: none; /* Make text unselectable for better click experience */
 }
 
 .tagline {
@@ -70,6 +86,8 @@ h1 {
   font-size: 14px;
   /* Add animation delay for staggered effect */
   animation: fadeIn 0.5s ease-out 0.2s both;
+  transition: color 0.5s ease;
+  user-select: none; /* Make text unselectable for better click experience */
 }
 
 @keyframes fadeIn {
@@ -90,6 +108,7 @@ h1 {
   border-radius: 12px; /* Increased corner radius */
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   padding: 16px;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
 /* Main content area */
@@ -119,6 +138,7 @@ main {
   margin-bottom: 5px;
   border-bottom: 1px solid #e9ecef;
   padding-bottom: 5px;
+  transition: border-bottom-color 0.5s ease;
 }
 
 /* Style for label */
@@ -128,6 +148,7 @@ label, h2 {
   color: #495057;
   display: inline-block;
   position: relative;
+  transition: color 0.5s ease;
 }
 
 label {
@@ -194,7 +215,7 @@ textarea {
   font-family: inherit;
   font-size: 14px;
   background-color: white;
-  transition: height 0.2s ease;
+  transition: height 0.2s ease, border-color 0.3s ease, background-color 0.5s ease, color 0.5s ease;
   overflow-y: hidden; /* Hide scrollbar during resize */
 }
 
@@ -213,7 +234,7 @@ textarea, .result-box {
   resize: vertical;
   font-family: inherit;
   font-size: 14px;
-  transition: all 0.2s ease, height 0.1s ease-out;
+  transition: all 0.2s ease, height 0.1s ease-out, background-color 0.5s ease, color 0.5s ease;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
   background-clip: padding-box;
   background-color: white;
@@ -243,6 +264,7 @@ button {
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
@@ -372,6 +394,7 @@ footer {
   /* Add subtle divider above footer */
   padding-top: 16px;
   border-top: 1px dashed rgba(67, 97, 238, 0.1);
+  transition: color 0.5s ease, border-top-color 0.5s ease;
 }
 
 /* Styles for the message display with enhanced animations */
@@ -431,4 +454,739 @@ footer {
     height: 100px; /* Adjusted responsive height while maintaining size difference */
     min-height: 100px;
   }
+}
+
+/* Button row for multiple buttons */
+.button-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.button-row button {
+  flex: 1;
+}
+
+/* Brainrot mode styles - now with more dramatic effects */
+body.brainrot-mode {
+  background-color: #330000;
+  background-image: radial-gradient(#660000 1px, transparent 1px);
+  color: #ffcc00;
+  transition: all 0.5s ease;
+}
+
+body.brainrot-mode header {
+  box-shadow: 0 4px 10px -6px rgba(255, 0, 0, 0.4);
+}
+
+body.brainrot-mode header:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+body.brainrot-mode header:active {
+  background-color: rgba(255, 0, 0, 0.2);
+}
+
+body.brainrot-mode header h1 {
+  background: linear-gradient(90deg, #ff0000, #ffcc00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+body.brainrot-mode .tagline {
+  color: #ff6666;
+}
+
+body.brainrot-mode .app-container {
+  background-color: rgba(30, 0, 0, 0.8);
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.2);
+}
+
+body.brainrot-mode label, 
+body.brainrot-mode h2 {
+  color: #ffcc00;
+}
+
+body.brainrot-mode .label-container {
+  border-bottom-color: #550000;
+}
+
+body.brainrot-mode textarea {
+  background-color: #1a0000;
+  color: #ffcc00;
+  border-color: #660000;
+}
+
+body.brainrot-mode textarea:focus {
+  border-color: #ff0000;
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
+}
+
+body.brainrot-mode .result-box:not(:empty) {
+  border-left: 3px solid #ff0000;
+}
+
+body.brainrot-mode button {
+  background-color: #990000;
+}
+
+body.brainrot-mode button:hover {
+  background-color: #cc0000;
+}
+
+body.brainrot-mode footer {
+  color: #ff9999;
+  border-top: 1px dashed rgba(255, 0, 0, 0.2);
+}
+
+body.brainrot-mode #enhanceButton {
+  background: linear-gradient(45deg, #990000, #cc0000);
+  box-shadow: 0 4px 8px rgba(153, 0, 0, 0.4);
+}
+
+body.brainrot-mode #copy-button,
+body.brainrot-mode .paste-icon {
+  background: linear-gradient(45deg, #990000, #cc0000);
+  box-shadow: 0 4px 8px rgba(153, 0, 0, 0.4);
+}
+
+body.brainrot-mode #copy-button.copied {
+  background: #006600;
+}
+
+/* Poetic mode styles - elegant literary theme */
+body.poetic-mode {
+  background-color: #f5f2e9;
+  background-image: radial-gradient(#e0d9c5 1px, transparent 1px);
+  color: #483c32;
+  transition: all 0.5s ease;
+  font-family: 'Lora', serif;
+}
+
+body.poetic-mode header {
+  box-shadow: 0 4px 10px -6px rgba(72, 60, 50, 0.4);
+}
+
+body.poetic-mode header:hover {
+  background-color: rgba(160, 82, 45, 0.05);
+}
+
+body.poetic-mode header:active {
+  background-color: rgba(160, 82, 45, 0.1);
+}
+
+body.poetic-mode header h1 {
+  background: linear-gradient(90deg, #8b4513, #a0522d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(139, 69, 19, 0.1);
+  font-family: 'Playfair Display', serif;
+}
+
+body.poetic-mode .tagline {
+  color: #8b6b4e;
+  font-style: italic;
+}
+
+body.poetic-mode .app-container {
+  background-color: rgba(245, 242, 233, 0.7);
+  box-shadow: 0 4px 15px rgba(139, 69, 19, 0.15);
+  border: 1px solid rgba(139, 69, 19, 0.1);
+}
+
+body.poetic-mode label, 
+body.poetic-mode h2 {
+  color: #5c3d2e;
+  font-family: 'Playfair Display', serif;
+}
+
+body.poetic-mode .label-container {
+  border-bottom-color: #d3c6b2;
+}
+
+body.poetic-mode textarea {
+  background-color: #faf7ef;
+  color: #483c32;
+  border-color: #d3c6b2;
+  font-family: 'Lora', serif;
+  line-height: 1.6;
+}
+
+body.poetic-mode textarea:focus {
+  border-color: #8b4513;
+  box-shadow: 0 0 5px rgba(139, 69, 19, 0.2);
+}
+
+body.poetic-mode .result-box:not(:empty) {
+  border-left: 3px solid #8b4513;
+}
+
+body.poetic-mode button {
+  background-color: #8b4513;
+}
+
+body.poetic-mode button:hover {
+  background-color: #a0522d;
+}
+
+body.poetic-mode footer {
+  color: #8b6b4e;
+  border-top: 1px dashed rgba(139, 69, 19, 0.2);
+}
+
+body.poetic-mode #enhanceButton {
+  background: linear-gradient(45deg, #8b4513, #a0522d);
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+}
+
+body.poetic-mode #copy-button,
+body.poetic-mode .paste-icon {
+  background: linear-gradient(45deg, #8b4513, #a0522d);
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.2);
+}
+
+body.poetic-mode #copy-button.copied {
+  background: #3a5f0b;
+}
+
+/* Click counter styling */
+#clickCounter {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(67, 97, 238, 0.9);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+body.poetic-mode #clickCounter {
+  background-color: rgba(139, 69, 19, 0.9);
+  box-shadow: 0 2px 5px rgba(139, 69, 19, 0.3);
+}
+
+/* Header click effect */
+.header-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: rgba(67, 97, 238, 0.2);
+  width: 10px;
+  height: 10px;
+  animation: headerRipple 0.8s linear;
+  pointer-events: none;
+}
+
+@keyframes headerRipple {
+  to {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+body.poetic-mode .header-ripple {
+  background-color: rgba(139, 69, 19, 0.3);
+}
+
+/* Mode transition effect for elegant transition */
+.mode-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 9999;
+  pointer-events: none;
+  animation: flashTransition 0.8s forwards;
+}
+
+@keyframes flashTransition {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+body.poetic-mode .mode-transition-overlay {
+  background: #f5f2e9;
+}
+
+/* Special animation for poetic activation */
+.elegant-transition {
+  animation: elegantTransition 0.8s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes elegantTransition {
+  0% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-5px) scale(1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* Poetic mode indicator in footer */
+#poeticIndicator {
+  font-size: 12px;
+  color: #8b4513;
+  margin-top: 5px;
+  transition: opacity 0.3s ease;
+}
+
+#poeticIndicator.hidden {
+  opacity: 0;
+}
+
+body.poetic-mode #poeticIndicator {
+  opacity: 1;
+}
+
+/* Floating quill pen animation for poetic mode */
+.floating-quill {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  color: #8b4513;
+  font-size: 14px;
+  animation: floatAnimation 3s infinite ease-in-out;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+@keyframes floatAnimation {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Decorative flourish for poetic mode */
+.flourish {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(139, 69, 19, 0.3), transparent);
+  width: 80%;
+  margin: 8px auto;
+}
+
+/* Header click effect */
+.header-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  background-color: rgba(67, 97, 238, 0.2);
+  width: 10px;
+  height: 10px;
+  animation: headerRipple 0.8s linear;
+  pointer-events: none;
+}
+
+@keyframes headerRipple {
+  to {
+    transform: scale(15);
+    opacity: 0;
+  }
+}
+
+body.brainrot-mode .header-ripple {
+  background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Mode transition effect for dramatic transition */
+.mode-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: white;
+  z-index: 9999;
+  pointer-events: none;
+  animation: flashTransition 0.8s forwards;
+}
+
+@keyframes flashTransition {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+body.brainrot-mode .mode-transition-overlay {
+  background: #ff0000;
+}
+
+/* Special animation for brainrot activation */
+.shake-violent {
+  animation: shakeViolent 0.5s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  perspective: 1000px;
+}
+
+@keyframes shakeViolent {
+  0%, 100% { transform: translateX(0); } 
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-8px) rotate(-1deg); }
+  20%, 40%, 60%, 80% { transform: translateX(8px) rotate(1deg); }
+}
+
+/* History feature styles */
+.history-container {
+  margin-top: 20px;
+  border-top: 1px solid #e9ecef;
+  padding-top: 16px;
+  animation: fadeIn 0.5s ease-out 0.6s both;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.history-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  background: transparent;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: rgba(67, 97, 238, 0.1);
+  color: #4361ee;
+}
+
+.history-list {
+  max-height: 250px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.history-list.collapsed {
+  max-height: 0;
+  overflow: hidden;
+}
+
+.history-item {
+  padding: 10px;
+  border-bottom: 1px solid #e9ecef;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-item:hover {
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+.history-prompt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  color: #495057;
+  margin-bottom: 3px;
+}
+
+.history-timestamp {
+  font-size: 11px;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.history-actions-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.history-button {
+  background: transparent;
+  border: none;
+  color: #4361ee;
+  font-size: 11px;
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+.history-button:hover {
+  text-decoration: underline;
+  background-color: rgba(67, 97, 238, 0.05);
+}
+
+.empty-history {
+  text-align: center;
+  padding: 15px;
+  color: #6c757d;
+  font-style: italic;
+  animation: fadeIn 0.3s ease-out;
+  display: none;
+}
+
+.empty-history.visible {
+  display: block;
+}
+
+.confirm-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  max-width: 300px;
+  width: 100%;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dialog-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.dialog-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.dialog-message {
+  margin-bottom: 15px;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.dialog-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.dialog-button-cancel {
+  background-color: #6c757d;
+  color: white;
+}
+
+.dialog-button-confirm {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Poetic mode history styles */
+body.poetic-mode .history-container {
+  border-top: 1px solid #d3c6b2;
+}
+
+body.poetic-mode .history-item {
+  border-bottom: 1px solid #d3c6b2;
+}
+
+body.poetic-mode .icon-button:hover {
+  background-color: rgba(139, 69, 19, 0.1);
+  color: #8b4513;
+}
+
+body.poetic-mode .history-item:hover {
+  background-color: rgba(139, 69, 19, 0.05);
+}
+
+body.poetic-mode .history-button {
+  color: #8b4513;
+}
+
+body.poetic-mode .history-button:hover {
+  background-color: rgba(139, 69, 19, 0.05);
+}
+
+/* Brainrot mode history styles */
+body.brainrot-mode .history-container {
+  border-top: 1px solid #550000;
+}
+
+body.brainrot-mode .history-item {
+  border-bottom: 1px solid #550000;
+}
+
+body.brainrot-mode .icon-button {
+  color: #ff6666;
+}
+
+body.brainrot-mode .icon-button:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff0000;
+}
+
+body.brainrot-mode .history-item:hover {
+  background-color: rgba(255, 0, 0, 0.05);
+}
+
+body.brainrot-mode .history-prompt {
+  color: #ffcc00;
+}
+
+body.brainrot-mode .history-timestamp {
+  color: #ff6666;
+}
+
+body.brainrot-mode .history-button {
+  color: #ff0000;
+}
+
+body.brainrot-mode .history-button:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+/* Character/token counter styles */
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #6c757d;
+  padding: 0 4px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.counter-container:hover {
+  opacity: 1;
+}
+
+.char-count, .token-count {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.char-count:before {
+  content: "\f031"; /* fa-font icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 9px;
+}
+
+.token-count:before {
+  content: "\f2db"; /* fa-microchip icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 9px;
+}
+
+/* Warning styles for counters when approaching limits */
+.counter-warning {
+  color: #ffc107;
+}
+
+.counter-danger {
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Info tooltip for token explanation */
+.token-info {
+  position: relative;
+  display: inline-block;
+  cursor: help;
+  margin-left: 4px;
+}
+
+.token-info:before {
+  content: "\f059"; /* fa-question-circle icon */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  font-size: 9px;
+}
+
+.token-info .tooltip-text {
+  visibility: hidden;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-weight: normal;
+  font-size: 11px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.token-info:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Poetic mode counter styles */
+body.poetic-mode .counter-container {
+  color: #8b6b4e;
+  font-family: 'Lora', serif;
+  font-style: italic;
+}
+
+body.poetic-mode .counter-warning {
+  color: #b7950b;
+}
+
+body.poetic-mode .counter-danger {
+  color: #a83232;
+}
+
+/* Brainrot mode counter styles */
+body.brainrot-mode .counter-container {
+  color: #ff6666;
+}
+
+body.brainrot-mode .counter-warning {
+  color: #ffcc00;
+}
+
+body.brainrot-mode .counter-danger {
+  color: #ff0000;
+  text-shadow: 0 0 4px rgba(255, 0, 0, 0.5);
 }

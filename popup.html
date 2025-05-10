@@ -7,10 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Add Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Add Google Fonts for poetic mode -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital@0;1&display=swap" rel="stylesheet">
 </head>
 <body>
   <!-- Header section for the extension -->
-  <header>
+  <header id="headerTitle">
     <h1>Promplify</h1>
     <p class="tagline">Enhance your AI prompts with a click</p>
   </header>
@@ -26,12 +30,19 @@
           </button>
         </div>
         <textarea id="promptInput" placeholder="Paste your prompt here..."></textarea>
+        <!-- Add character/token counter for input -->
+        <div class="counter-container" id="inputCounter">
+          <span class="char-count">0 chars</span>
+          <span class="token-count">~0 tokens</span>
+        </div>
       </div>
       
-      <button id="enhanceButton">
-        <span class="button-text"><i class="fas fa-wand-magic-sparkles fa-sm"></i> Enhance</span>
-        <span class="loader" id="loadingSpinner"></span>
-      </button>
+      <div class="button-row">
+        <button id="enhanceButton">
+          <span class="button-text"><i class="fas fa-wand-magic-sparkles fa-sm"></i> Enhance</span>
+          <span class="loader" id="loadingSpinner"></span>
+        </button>
+      </div>
       
       <div class="result-container">
         <div class="label-container">
@@ -41,6 +52,28 @@
           </button>
         </div>
         <textarea id="enhancedPrompt"></textarea>
+        <!-- Add character/token counter for enhanced prompt -->
+        <div class="counter-container" id="enhancedCounter">
+          <span class="char-count">0 chars</span>
+          <span class="token-count">~0 tokens</span>
+        </div>
+      </div>
+
+      <!-- History feature -->
+      <div class="history-container">
+        <div class="history-header">
+          <h2><i class="fas fa-history fa-sm"></i> History</h2>
+          <div class="history-actions">
+            <button id="toggleHistory" class="icon-button" title="Toggle history">
+              <i class="fas fa-angle-down"></i>
+            </button>
+            <button id="clearHistory" class="icon-button" title="Clear history">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+        </div>
+        <div id="historyList" class="history-list"></div>
+        <div id="emptyHistory" class="empty-history">No history yet</div>
       </div>
     </main>
   </div>
@@ -48,6 +81,9 @@
   <!-- Footer with credits -->
   <footer>
     <p>Promplify &copy; 2025 <i class="fas fa-bolt fa-xs"></i></p>
+    <div id="poeticIndicator" class="hidden">
+      <i class="fas fa-feather-pointed"></i>
+    </div>
   </footer>
   
   <script src="popup.js"></script>

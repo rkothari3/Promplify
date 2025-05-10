@@ -10,6 +10,8 @@ Promplify is a Chrome extension designed to enhance your AI prompts with a singl
 
 - **One-Click Enhancement**: Transform basic prompts into more detailed, precise versions
 - **Copy & Paste Integration**: Easily paste your existing prompts and copy the enhanced versions
+- **Character & Token Counter**: Track prompt length with real-time character and estimated token counts
+- **Prompt History**: Access your previous prompts and their enhanced versions
 - **Elegant UI/UX**: Clean, intuitive interface with subtle animations and feedback
 - **Real-time Processing**: Watch your prompt transform with a satisfying typing effect
 - **Privacy Focused**: Your prompts are only processed when you click the enhance button
@@ -29,6 +31,8 @@ Promplify is a Chrome extension designed to enhance your AI prompts with a singl
 3. Click the "Enhance" button
 4. Watch as your prompt is transformed into a more effective version
 5. Copy the enhanced prompt to use with your favorite AI tools
+6. Monitor character and token counts to ensure your prompts stay within model limits
+7. Access your prompt history to reuse previous prompts
 
 ## 🧠 How It Works
 
